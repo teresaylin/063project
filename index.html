@@ -3,11 +3,17 @@
   <h1>PaperCast</h1>
   <h2>Teresa Lin, Erica Yuen</h2>
   <h3>Our idea</h3>
-  <p>PaperCast is a tool that turns any paper into a podcast and helps you learn even while you're sleeping. <br>Whether you've just pulled an all-nighter and are on your second one, or you've got the post-lunch lull, PaperCast will know when you're falling asleep and will read your paper back to you!</p>
+  <p>
+    PaperCast is a tool that turns any paper into a podcast and helps you learn even while you're sleeping. <br>Whether you've just pulled an all-nighter and are on your second one, or you've got the post-lunch lull, PaperCast will know when you're falling asleep and will read your paper back to you!
+  </p>
   <h3>Presentation Graphics</h3>
   <img src="images/Papercast-final.png" width="600">
   <h3>How it works</h3>
-  <p>A heart rate sensor clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi. The Raspberry Pi runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least 10 bpm. The program will detect this change and trigger a camera that is attached to the Raspberry Pi to capture an image of the user's paper. After applying unwarping and thresholding, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to transform the image to text, and finally to audio. A speaker module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!<br><br>Additionally, anybody on the same network as the Raspberry Pi can connect to a webpage and view the status of the user (awake/asleep), his/her current heart rate, his/her average awake heart rate, and the text that he/she is reading. We hosted our Python server on the Raspberry Pi and set up a static IP and port (192.168.43.152:8000) on a mobile hotspot. However, the IP address is only accessible to users on the hotspot and while the program is running.</p>
+  <p>
+    A heart rate sensor clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi. The Raspberry Pi runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least 10 bpm. The program will detect this change and trigger a camera that is attached to the Raspberry Pi to capture an image of the user's paper. After applying unwarping and thresholding, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to transform the image to text, and finally to audio. A speaker module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!
+    <br><br>
+    Additionally, anybody on the same network as the Raspberry Pi can connect to a webpage and view the status of the user (awake/asleep), his/her current heart rate, his/her average awake heart rate, and the text that he/she is reading. We hosted our Python server on the Raspberry Pi and set up a static IP and port (192.168.43.152:8000) on a mobile hotspot. However, the IP address is only accessible to users on the hotspot and while the program is running.
+  </p>
   <h3>Video</h3>
   <a href="https://drive.google.com/open?id=1ge01FDjU4W4Ftc6aur4NcadY34_kfRHk">Watch our demo here!</a>
   <h3>Photos</h3>
@@ -61,9 +67,21 @@
     or have other sensors such as a decrease in movement using an accelerometer.
   </p>
   <h3>Week #6: Oct. 23 - 29</h3>
+  <p>
+    We started off with a lot of leftover prototyping materials from other projects, so we already had a Raspberry Pi 2, a wifi adapter for the Raspberry Pi, and an Arduino Micro. We also had the camera from the touchpad pset, so all we had to order for a first prototype was a heart rate sensor. We found a promising <a href="http://wiki.seeed.cc/Grove-Ear-clip_Heart_Rate_Sensor/">candidate</a>, the Grove Ear Clip Heart Rate Sensor. Upon a deeper dive into the specs however, we realized we would also need to get the Grove Base Shield and that shipping would take up to 5 days. We did not want to wait that long, so we found another heart rate sensor on Amazon that did not need a base shield: <a href="https://www.amazon.com/Pulse-Sensor-Real-Original-Best/dp/B01CPP4QM0/ref=sr_1_5?rps=1&ie=UTF8&qid=1509228577&sr=8-5&keywords=heart%20rate%20ear%20clip%20sensor&refinements=p_85%3A2470955011">the Pulse Sensor</a>. This Pulse Sensor heart rate sensor came with an ear clip and was compatible with most Arduinos. We ordered an Arduino Uno just in case, but it turned out to work perfectly fine with the Arduino Micro that we had.
+    <br><br>
+    In the meantime while we waited for our heart rate sensor, we worked on capturing an image and converting it to audio. We used the camera provided in our touchpad pset. Following <a href="https://www.youtube.com/watch?v=83vFL6d57OI">this tutorial</a>, we converted the image to grayscale and thresholded it using the OpenCV library. Then, we passed the thresholded image into <a href="https://github.com/madmaze/pytesseract">Pytesseract</a>, a Python wrapper for Google's Tesseract OCR, to convert the image to a string. Finally, to play the text from our computers, we discovered that we could use our Macs' Terminal "say" command through the Python os library. We had half of our first prototype done!
+    <br><br>
+    Next, we set up our Raspberry Pi 2. We followed the setup instructions <a href="https://www.raspberrypi.org/help/noobs-setup/2/">here</a>, which consisted of formatting the SD card, putting the NOOBS files onto the SD card, and booting up the Raspberry Pi. For troubleshooting, we found this guide really useful: <a href="https://elinux.org/R-Pi_Troubleshooting#Red_power_LED_is_on.2C_green_LED_does_not_flash.2C_nothing_on_display">R-Pi Troubleshooting</a>.
+  </p>
   <h3>Week #7: Oct. 30 - Nov. 5</h3>
   <h3>Week #8: Nov. 6 - 12</h3>
   <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a>
+  <p>
+    As discussed in our presentation, there were some limitations to our first prototype. The first was that the camera we used did not operate at a high enough resolution to capture a clear image of our text from more than 5 inches away. Positioning the camera within a couple inches of the text would significantly hinder the reader's ability to read while awake, so we knew that we needed to get a better camera.
+    <br><br>
+    Another limitation was that in order for Pytesseract to correctly transform the image to string, the image needed to be as straight as possible. If it was rotated maybe more than 15 degrees, then Pytesseract would have a really hard time and would spit out gibberish text. We therefore needed to deal with unwarping warped images and correcting any rotation in the image before passing it into Pytesseract.
+  </p>
   <h3>Week #9: Nov. 13 - 19</h3>
   <h3>Week #10: Nov. 20 - 26</h3>
   <h3>Week #11: Nov. 27 - Dec. 3</h3>
