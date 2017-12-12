@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <h1>Project Name:</h1>
-  <h2>Team Members: Teresa Lin, Erica Yuen</h2>
+  <h1>PaperCast</h1>
+  <h2>Created by: Teresa Lin, Erica Yuen</h2>
   <h3>Our idea</h3>
-  <p>Lorem ipsum dolor sit amet, bibendum hymenaeos wisi sed sodales quam ut, nesciunt vulputate montes nullam ridiculus metus interdum, felis condimentum porttitor aliquam pellentesque ut neque. At maecenas mollis tincidunt id suspendisse, leo semper velit lectus mi mauris est, sollicitudin et class vulputate, ac dui sunt non eu dolor. Maecenas erat velit ligula est ut, malesuada odio, nec in vitae sit, ultrices mauris urna elit ut, dictum amet vivamus.</p>
+  <p>PaperCast is a tool that turns any paper into a podcast and helps you learn even while you're sleeping. Whether you've just pulled an all-nighter and are on your second one, or you've got the post-lunch lull, PaperCast will know when you're falling asleep and will read your paper back to you!</p>
   <h3>How it works</h3>
-  <p>Praesent orci, nascetur vitae, nibh morbi amet erat bibendum blandit ante. Dui vel blandit erat, eget morbi blandit ipsum at urna. Duis ipsum pellentesque metus augue rhoncus, vitae quis magni duis pretium cursus. Curabitur fringilla felis sed, hymenaeos pretium vestibulum bibendum, augue et pellentesque fermentum sit, vitae non sit feugiat turpis tortor, vitae et lectus commodo a. Libero aliquam sollicitudin leo sagittis at vel, ut dui sed elementum feugiat lorem, consequat parturient congue nulla hac quae feugiat, ipsum iaculis nonummy id. Adipiscing lacus, sed in magna vel mauris nibh, felis ut.</p>
+  <p>A heart rate sensor clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi. The Raspberry Pi runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least 10 bpm. The program will detect this change and trigger a camera that is attached to the Raspberry Pi to capture an image of the user's paper. After applying unwarping and thresholding, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to transform the image to text, and finally to audio. A speaker module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!<br><br>Additionally, anybody on the same network as the Raspberry Pi can connect to a webpage and view the status of the user (awake/asleep), his/her current heart rate, his/her average awake heart rate, and the text that he/she is reading. We hosted our Python server on the Raspberry Pi and set up a static IP and port (192.168.43.152:8000) on a mobile hotspot. However, the IP address is only accessible to users on the hotspot and while the program is running.</p>
   <h3>Video</h3>
-  <p>Vel commodo, convallis vivamus, urna ac lacus fusce bibendum sed, amet dolor id tellus wisi duis bibendum, arcu ac ac tincidunt. Tempus lectus sagittis dapibus vel, sit wisi egestas suspendisse morbi, mi non, placerat sapien arcu proident accumsan praesent dui. Sapien sed.</p>
+  <a href="https://drive.google.com/open?id=1ge01FDjU4W4Ftc6aur4NcadY34_kfRHk">Watch our demo here!</a>
   <h3>Photos</h3>
   <p>Vel commodo, convallis vivamus, urna ac lacus fusce bibendum sed, amet dolor id tellus wisi duis bibendum, arcu ac ac tincidunt. Tempus lectus sagittis dapibus vel, sit wisi egestas suspendisse morbi, mi non, placerat sapien arcu proident accumsan praesent dui. Sapien sed.</p>
   <h3>Presentation Graphics</h3>
-  <p>Vel commodo, convallis vivamus, urna ac lacus fusce bibendum sed, amet dolor id tellus wisi duis bibendum, arcu ac ac tincidunt. Tempus lectus sagittis dapibus vel, sit wisi egestas suspendisse morbi, mi non, placerat sapien arcu proident accumsan praesent dui. Sapien sed.</p>
+  <img src="images/Papercast-final.png" width="800">
 
   <h1>Weekly Progress Log</h1>
 
