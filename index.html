@@ -7,7 +7,9 @@
     PaperCast is a tool that turns any paper into a podcast and helps you learn even while you're sleeping. <br>Whether you've just pulled an all-nighter and are on your second one, or you've got the post-lunch lull, PaperCast will know when you're falling asleep and will read your paper back to you!
   </p>
   <h3>Presentation Graphics</h3>
-  <img src="images/Papercast-final.png" width="600">
+  <img src="images/Papercast-final.png" width="600"><br><br>
+  <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a><br><br>
+  <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
   <h3>How it works</h3>
   <p>
     A heart rate sensor clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi. The Raspberry Pi runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least 10 BPM. The program will detect this change and trigger a camera that is attached to the Raspberry Pi to capture an image of the user's paper. After applying unwarping and thresholding, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to transform the image to text, and finally to audio. A speaker module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!
@@ -123,14 +125,43 @@
   <p>
     From our work earlier on processing BPM data, we learned that before gathering data, we needed to calibrate the sensor. We had already implemented one round of calibration, where we gave the sensor 15 seconds to calibrate itself, eliminating some of the noisier BPM data in the beginning. For our next iteration, we added a round of calibration to determine the user's average awake BPM threshold. Once the system has received 15 BPM data points under 95 BPM, it deems the data stable and starts to calculate the user's average heart rate from the next 15 BPM data points. After the average has been calculated, the system sets the awake/asleep BPM threshold equal to: user's average BPM - 10 BPM.* If the system receives 10 BPM data points under this awake/asleep threshold, then it deems the user asleep and triggers the image processing.
     <br><br>
+    Next, we went to Microcenter and got a much higher resolution <a href="http://www.microcenter.com/product/463611/8MP_Raspberry_Pi_Camera_Module">camera module</a> (8 MP!) and a <a href="http://www.microcenter.com/product/486598/Speaker_pHAT">speaker phat</a> to attach to our Raspberry Pi. We setup the two modules using the following guides:
+    <br>
+    <a href="https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera">How to Install/Use the Raspberry Pi Camera</a>
+    <br>
+    <a href="https://learn.pimoroni.com/tutorial/sandyj/assembling-speaker-phat">Assembling Speaker Phat</a>
+    <br>
+    <a href="https://github.com/pimoroni/speaker-phat">Installing Speaker Phat</a>
+    <br><br>
     *Research shows that heart rate drops significantly while asleep: <a href="https://www.livestrong.com/article/105256-normal-heart-rate-sleeping/">Normal Heart Rate Sleeping</a>
   </p>
   <h3>Week #10: Nov. 20 - 26</h3>
+  <p>
+    The next thing we needed to do was set up a server on the Raspberry Pi, so that we could send data wirelessly to a webpage accessible to other computers on the same network. This proved to be a major pain point of the project.
+    <br><br>
+    We found some guides (<a href="https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md">this</a> and <a href="https://diyhacking.com/raspberry-pi-web-server/">this</a>) on how to setup an Apache server on the Pi and use PHP on the server side. We setup a <a href="https://raspberrypi.stackexchange.com/questions/37920/how-do-i-set-up-networking-wifi-static-ip-address/74428#74428">static IP address</a> on our Pi while connected to the "MIT" wifi network (our Raspberry Pi would not connect to MIT Secure). We used Python for the client side and set up socket connections. However, when we tried connecting as a client, the server never acknowledged a connection. We initially thought we had chosen a bad port, but we tried 4444, 8080, 80, and all sorts of random numbers, and nothing worked.
+    <br><br>
+    We therefore decided to abandon ship and set up a static IP address (192.168.43.152) on a mobile hotspot. Our Apache/PHP server still did not accept connections, so we turned to creating our own Python server, using SimpleHTTPServer and <a href="https://wiki.python.org/moin/BaseHttpServer">this guide</a>. It finally worked! We were able to connect to 192.168.43.152:8000 on other computers that were connected to the mobile hotspot.
+    <br><br>
+    We suspect that the MIT networks block a lot of ports, which may have been the root of our failed first attempt.
+  </p>
   <h3>Week #11: Nov. 27 - Dec. 3</h3>
+  <p>
+    [designing form factor]
+    [improving image processing]
+    [improving speech]
+  </p>
   <h3>Week #12: Dec. 4 - 10</h3>
+  <p>
+    [integrating server.py and process.py]
+  </p>
   <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
 
   <h3>Week #13: Dec. 11 - 17</h3>
-
+  <p>
+    [what we learned from moving stuff]
+    [refining stuff]
+    [thank you to Stefanie and Jared]
+  </p>
 </center>
 </html>
