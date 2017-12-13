@@ -167,7 +167,7 @@
   </p>
   <h3>Week #12: Dec. 4 - 10</h3>
   <p>
-    [integrating server.py and process.py]
+    Integrating the data and image processing with the server gave us some unexpected difficulties. Because the server processing needed to run in parallel with the data/image processing, it was easier to split the server code into a separate script, which we called server.py. We then imported process.py into server.py, but because we had not specified in process.py an "if __name__ = '__main__'", all of the code in process.py would run immediately, and we ran into errors with camera setup if we were concurrently using the camera in another test. Thus, we split the data and image processing in process.py into methods and only imported the main() and getVariables() function (which gets the variables that we need to display the relevant data on the webpage). To run the server and main() in parallel, we used a timer to start main() roughly 5 seconds after starting the server.
   </p>
   <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
 
