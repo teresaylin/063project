@@ -2,7 +2,7 @@
 <html>
 <body style="margin-left: 300px; margin-right: 300px">
   <center>
-  <h1>PaperCast</h1>
+  <img src= "images/logo.png"</img>
   <h2>Teresa Lin, Erica Yuen</h2>
   <h3>Our idea</h3>
   <p>
@@ -24,6 +24,7 @@
     Your video is not compatible with this browser.
   </video>
   <h3>Photos</h3>
+
   <p>
     <img src="images/photo-full_1.jpg" width="700"><br><br>
     PaperCast fully assembled<br><br><br>
@@ -40,6 +41,7 @@
     Can you guess what we're reading?<br><br><br>
   </p>
 
+
   <h1>Weekly Progress Log</h1>
 
   <h3>Week #1: Sept. 18 - 24</h3>
@@ -50,7 +52,7 @@
   <img src="images/BumpingRings.jpg" height="250" width="400">
   <img src="images/Waiter.jpg" height="250" width="400">
   <img src="images/EmotionalShirts.jpg" height="250" width="400">
-  
+
   <h3>Week #3: Oct. 2 - 8</h3>
   <h3>Week #4: Oct. 9 - 15</h3>
   <a href="https://docs.google.com/presentation/d/14kPEFTG91SIZUYOHI9npAKn0m3VcUbKY_r_TKGWuR80/edit?usp=sharing">HW8: Ideas Presentation</a>
@@ -162,9 +164,44 @@
   </p>
   <h3>Week #11: Nov. 27 - Dec. 3</h3>
   <p>
-    [designing form factor]
-    [improving image processing]
-    [improving speech]
+    After getting most of the software logic working, we then created a permanent fixture to hold the camera and Raspberry Pi.
+    At the beginning of the project, we had originally wanted a wearable eye and earpiece for PaperCast. However, we quickly realized
+    that it was rather difficult to process any image to text. We needed a consistent type of photo to work with. With a headpiece,
+    there were far too many factors that could prevent us from getting a clear image to convert to text, such as the direction of the head,
+    or if hair or a hand got in the way. We also wanted the user to feel more comfortable by having less hardware attached to his/her head.
+    <br><br>
+    As a result, we designed a stand to attach the camera, as shown here: [INSERT IMAGE]. <br><br>
+    We made the file for the laser cutting job using Adobe Illustrator, found here. [INSERT URL TO IMAGE]
+    We decided to cut the side stands from wood because it was cheaper, but made the middle part out of clear acrylic
+    so that it would not interfere with the user's peripheral vision. We cut slots in the wooden panels so that the height
+    of the camera could be adjustable.
+    <br><br>
+    After building the form factor, and attaching the Raspberry Pi 2 and Pi Camera with screws, we were able to get consistent images.
+    However, these images were still blurry, and we learned that our new camera does not perform auto-focus.
+    We had to use needle-nose pliers to <a href= "https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models"> manually twist the camera</a> lens until it focused.
+
+    From these images, the accuracy rate of the text-to-speech library was around 50%, and took about 3 minutes to process. We used
+    <a href= "https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/"> this guide</a> as a basis to process the image to improve image to text accuracy.
+    The process consists of:
+
+      <div> <b>Taking a clear photo of a document where all four edges are visable:</b>
+      <br> <br><img src="images/cleanText.png" width = "300px"></img></div> <br>
+
+      <div> <b>Detecting edges using Canny Edge Detection:</b>
+      <br> <br><img src="images/edged.png" width = "300px"></img></div><br>
+
+      <div> <b>Finding the largest approximately quadrilateral contour:</b>
+      <br> <br><img src="images/outline.png" width = "300px"></img></div><br>
+
+      <div> <b>Applying perspective transform to warp the document into a rectangle and applying
+      adaptive thresholding to make the text more clear.</b>
+      <br> <br><img src="images/warped.png" width = "300px"></img></div><br>
+
+      From this image, we can easily extract the text from the image using the pytesseract library.
+      We found that the processing time was reduced to about 20 seconds, with a significant improvement in accuracy.
+
+      We used Google's Text to Speech API to convert the text to speech in an MP3 file format, and
+      used MPG321 to play the file. We found that this library had the clearest audio.
   </p>
   <h3>Week #12: Dec. 4 - 10</h3>
   <p>
@@ -178,6 +215,6 @@
     [refining stuff]
     [thank you to Stefanie and Jared]
   </p>
-</center>
+  </center>
 </body>
 </html>
