@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
-<body style="margin-left: 300px; margin-right: 300px">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Roboto+Slab" rel="stylesheet">
+</head>
+<body style="margin-left: 280px; margin-right: 280px">
   <center>
   <img src= "images/logo.png"</img>
   <h2>Teresa Lin, Erica Yuen</h2>
@@ -10,42 +14,46 @@
   </p>
   <h3>Presentation Graphics</h3>
   <img src="images/Papercast-final.png" width="600"><br><br>
-  <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a><br><br>
-  <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
+  <p>
+    <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a><br>
+    <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
+  </p>
   <h3>How it works</h3>
   <p>
-    A heart rate sensor clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi. The Raspberry Pi runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least 10 BPM. The program will detect this change and trigger a camera that is attached to the Raspberry Pi to capture an image of the user's paper. After applying unwarping and thresholding, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to transform the image to text, and finally to audio. A speaker module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!
+    A <b>heart rate sensor</b> clipped onto the user's ear sends continuous heart rate data to an Arduino Micro, which then sends the data to a Raspberry Pi.<br><br>
+    The <b>Raspberry Pi</b> runs a program to continuously process the data to determine the user's average awake heart rate. If the user falls asleep, his/her heart rate will drop by at least <b>10 BPM</b>. The program will detect this change and trigger a <b>camera</b> that is attached to the Raspberry Pi to capture an image of the user's paper.<br><br>
+    After <b>applying unwarping and thresholding</b>, the program uses Pytesseract (a Python wrapper for Google's Tesseract OCR) and Google Text to Speech to <b>transform the image to text and the text to audio</b>. A <b>speaker</b> module attached to the Raspberry Pi then starts to read the text to the unsuspecting (and unconscious) user!
     <br><br>
-    Additionally, anybody on the same network as the Raspberry Pi can connect to a webpage and view the status of the user (awake/asleep), his/her current heart rate, his/her average awake heart rate, and the text that he/she is reading. We hosted our Python server on the Raspberry Pi and set up a static IP and port (192.168.43.152:8000) on a mobile hotspot. However, the IP address is only accessible to users on the hotspot and while the program is running.
+    Additionally, anybody on the same network as the Raspberry Pi can connect to a <b>webpage</b> and view the <b>status of the user (awake/asleep), current heart rate, average awake heart rate, and the text that he/she is reading</b>. We hosted our Python server on the Raspberry Pi and set up a static IP and port (192.168.43.152:8000) on a mobile hotspot. However, the IP address is only accessible to users on the hotspot and while the program is running.
   </p>
   <h3>Video</h3>
   <video width="700" controls>
-    <source src="videos/FinalVideoBloopers.mp4">
+    <source src="videos/FinalVideoBloopersVoiceover.mp4">
     Your video is not compatible with this browser.
   </video>
   <h3>Photos</h3>
 
-  <p>
-    <img src="images/photo-full_1.jpg" width="700"><br><br>
+  <p style="font-style: italic">
+    <img src="images/photo-full_1.jpg" width="700"><br>
     PaperCast fully assembled<br><br><br>
-    <img src="images/photo-layout-annotated.png" width="700"><br><br>
+    <img src="images/photo-layout-annotated.png" width="700"><br>
     PaperCast's individual components:<br>
-    1) Pulse Sensor heart rate sensor, 2) wooden stands, 3) acrylic fixture for Raspberry Pi and modules, 4) Raspberry Pi, 5) Arduino Micro, 6) Canakit Wifi adapter, 7) Speaker Phat, 8) breadboard, 9) Picamera module<br><br><br>
-    <img src="images/photo-pi.jpg" width="700"><br><br>
+    1) Pulse Sensor heart rate sensor, 2) wooden stands, 3) acrylic fixture for Raspberry Pi and modules,<br>4) Raspberry Pi, 5) Arduino Micro, 6) Canakit Wifi adapter, 7) Speaker Phat, 8) breadboard, 9) Picamera module<br><br><br>
+    <img src="images/photo-pi.jpg" width="700"><br>
     Raspberry Pi 2<br><br><br>
-    <img src="images/photo-picamera-closeup.jpg" width="700"><br><br>
+    <img src="images/photo-picamera-closeup.jpg" width="700"><br>
     PiCamera module on underside of Raspberry Pi<br><br><br>
-    <img src="images/photo-heartsensor.jpg" width="700"><br><br>
+    <img src="images/photo-heartsensor.jpg" width="700"><br>
     Pulse Sensor heart rate sensor<br><br><br>
-    <img src="images/photo-pi-pov.jpg" width="700"><br><br>
+    <img src="images/photo-pi-pov.jpg" width="700"><br>
     Can you guess what we're reading?<br><br><br>
   </p>
 
 
-  <h1>Weekly Progress Log</h1>
+  <h2>Weekly Progress Log</h2>
+  <h3 style="color: gray">Week 1: September 18 - 24</h3>
 
-  <h3>Week #1: Sept. 18 - 24</h3>
-  <h3>Week #2: Sept. 25 - Oct. 1</h3>
+  <h3>Week 2: September 25 - October 1</h3>
   <h4>HW5: 5 Ideas</h4>
   <img src="images/UrbanExploration.jpg" height="250" width="400">
   <img src="images/Papercast.jpg" height="250" width="400">
@@ -53,16 +61,20 @@
   <img src="images/Waiter.jpg" height="250" width="400">
   <img src="images/EmotionalShirts.jpg" height="250" width="400">
 
-  <h3>Week #3: Oct. 2 - 8</h3>
-  <h3>Week #4: Oct. 9 - 15</h3>
-  <a href="https://docs.google.com/presentation/d/14kPEFTG91SIZUYOHI9npAKn0m3VcUbKY_r_TKGWuR80/edit?usp=sharing">HW8: Ideas Presentation</a>
-  <p>We took the five ideas from Week 2, created presentation graphics, and presented them!</p>
+  <h3 style="color: gray">Week 3: October 2 - 8</h3>
+
+  <h3>Week 4: October 9 - 15</h3>
+  <p>
+    <a href="https://docs.google.com/presentation/d/14kPEFTG91SIZUYOHI9npAKn0m3VcUbKY_r_TKGWuR80/edit?usp=sharing">HW8: Ideas Presentation</a><br>
+    We took the five ideas from Week 2, created presentation graphics, and presented them!
+  </p>
   <img src="images/5Ideas1.png" height="250" width="400">
   <img src="images/5Ideas2.png" height="250" width="400">
   <img src="images/5Ideas3.png" height="250" width="400">
   <img src="images/5Ideas4.png" height="250" width="400">
   <img src="images/5Ideas5.png" height="250" width="400">
-  <h3>Week #5: Oct. 16 - 22</h3>
+
+  <h3>Week 5: October 16 - 22</h3>
   <h4>HW10: Chosen Idea</h4>
   <img src="images/Idea1-Papercast.png" height="250" width="400">
   <h4>Goal of PaperCast</h4>
@@ -77,7 +89,7 @@
   </p>
   <h4>How PaperCast fits into the project scope</h4>
   <p>
-    We will need to lasercut some sort of eyewear that will hold the camera(s), as well as an enclosure that attaches the eyewear to an ear clip heart rate sensor. We will use a heart rate sensor that detects drops in the user's heart rate, indicating that the user is falling asleep. We will also use cameras to take a photo of the reading when the user is asleep. The data from the heart rate sensor and the photo from the cameras will be sent over wifi. We will process the heart rate data in real time, and if a drop in heart rate is detected, we will use the photo sent from the camera and transcribe the reading into speech. The user input for our project is the user's heart rate.
+    We will need to lasercut some sort of eyewear that will hold the camera(s), as well as an enclosure that attaches the eyewear to an ear clip heart rate sensor. We will use a heart rate sensor that detects drops in the user's heart rate, indicating that the user is falling asleep. We will also use cameras to take a photo of the reading when the user is asleep. The data from the heart rate sensor and the photo from the cameras will be sent over wifi. We will process the heart rate data in real time, and if a drop in heart rate is detected, we will use the photo sent from the camera and transcribe the reading into speech. The user input will be the user's heart rate.
   </p>
   <h4>Final demo</h4>
   <p>
@@ -88,17 +100,27 @@
     hard code a decrease in heartrate based on previous measurements for the demo,
     or have other sensors such as a decrease in movement using an accelerometer.
   </p>
-  <h3>Week #6: Oct. 23 - 29</h3>
+
+  <h3>Week 6: October 23 - 29</h3>
+  <h4>Beginning our first prototype</h4>
   <p>
     We started off with a lot of leftover prototyping materials from other projects, so we already had a Raspberry Pi 2, a wifi adapter for the Raspberry Pi, and an Arduino Micro. We also had the camera from the touchpad pset, so all we had to order for a first prototype was a heart rate sensor. We found a promising candidate, the <a href="http://wiki.seeed.cc/Grove-Ear-clip_Heart_Rate_Sensor/">Grove Ear Clip Heart Rate Sensor</a>. Upon a deeper dive into the specs however, we realized we would also need to get the Grove Base Shield and that shipping would take up to 5 days. We did not want to wait that long, so we found another heart rate sensor on Amazon that did not need a base shield: <a href="https://www.amazon.com/Pulse-Sensor-Real-Original-Best/dp/B01CPP4QM0/ref=sr_1_5?rps=1&ie=UTF8&qid=1509228577&sr=8-5&keywords=heart%20rate%20ear%20clip%20sensor&refinements=p_85%3A2470955011">the Pulse Sensor</a>. This Pulse Sensor heart rate sensor came with an ear clip and was compatible with most Arduinos. We ordered an Arduino Uno just in case, but it turned out to work perfectly fine with the Arduino Micro that we had.
-    <br><br>
+  </p>
+  <h4>Image processing</h4>
+  <p>
     In the meantime while we waited for our heart rate sensor, we worked on capturing an image and converting it to audio. We used the camera provided in our touchpad pset. Following <a href="https://www.youtube.com/watch?v=83vFL6d57OI">this tutorial</a>, we converted the image to grayscale and thresholded it using the OpenCV library. Then, we passed the thresholded image into <a href="https://github.com/madmaze/pytesseract">Pytesseract</a>, a Python wrapper for Google's Tesseract OCR, to convert the image to a string. Finally, to play the text from our computers, we discovered that we could use our Macs' Terminal "say" command through the Python os library. We had half of our first prototype done!
-    <br><br>
+  </p>
+  <h4>First bootup of Raspberry Pi</h4>
+  <p>
     Next, we booted our Raspberry Pi 2. We followed the setup instructions <a href="https://www.raspberrypi.org/help/noobs-setup/2/">here</a>, which consisted of formatting the SD card, putting the NOOBS files onto the SD card, and booting up the Raspberry Pi. For troubleshooting, we found this guide really useful: <a href="https://elinux.org/R-Pi_Troubleshooting#Red_power_LED_is_on.2C_green_LED_does_not_flash.2C_nothing_on_display">R-Pi Troubleshooting</a>. Note to others and future selves: you need a monitor, keyboard, and mouse!
   </p>
-  <h3>Week #7: Oct. 30 - Nov. 5</h3>
+
+  <h3>Week 7: October 30 - November 5</h3>
+  <h4>Using the Pulse Sensor heart rate sensor</h4>
   <p>
-    Once we had our heart rate sensor, we followed the instructions <a href="https://pulsesensor.com/pages/code-and-guide">here</a> to connect the pins of the sensor to our Arduino microcontroller. We then used PySerial, a Python library, to read the BPM data from the Arduino. (Anything sent to println in Arduino can be read by readline() in PySerial). We had some trouble reading the BPM correctly - on Macs, using PySerial's readline() may send some extra slashes \\, but when you translate to the Raspberry Pi, you can just do readline() without parsing the input for the actual BPM number. Here, we are testing the BPM readings from the heart rate sensor:
+    Once we had our heart rate sensor, we followed the instructions <a href="https://pulsesensor.com/pages/code-and-guide">here</a> to connect the pins of the sensor to our Arduino microcontroller. We then used PySerial, a Python library, to read the BPM data from the Arduino. (Anything sent to println in Arduino can be read by readline() in PySerial). We had some trouble reading the BPM correctly - on Macs, using PySerial's readline() may send some extra slashes \\, but when you translate to the Raspberry Pi, you can just do readline() without parsing the input for the actual BPM number. 
+    <br><br>
+    <i>Here, we are testing the BPM readings from the heart rate sensor:</i>
     <br>
     <video width="700" controls>
       <source src="videos/HeartRateTestingTiny.mp4">
@@ -109,28 +131,29 @@
     <br><br>
     Finally we integrated the reading of BPM data with our earlier work on image to text audio conversion. We manually set a BPM awake threshold (for testing, we set this threshold to be lower than our average heart rate), and if our heart rate dipped below that threshold, then our program would trigger the image processing.
     <br><br>
-    Here, we are using BPM data to trigger image capture:
+    <i>Here, we are using BPM data to trigger image capture:</i>
     <br>
     <video width="700" controls>
       <source src="videos/BPMTriggerTestingTiny.mp4">
       Your video is not compatible with this browser.
     </video>
     <br><br>
-    This video shows our first pass at converting image to audio:
+    <i>This video shows our first pass at converting image to audio:</i>
     <br>
     <video width="700" controls>
       <source src="videos/ImageProcessTestingTiny.mp4">
       Your video is not compatible with this browser.
     </video>
   </p>
-  <h3>Week #8: Nov. 6 - 12</h3>
-  <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a>
+
+  <h3>Week 8: November 6 - 12</h3>
   <p>
-    As discussed in our presentation, there were some limitations to our first prototype. The first was that the camera we used did not operate at a high enough resolution to capture a clear image of our text from more than 5 inches away. Positioning the camera within a couple inches of the text would significantly hinder the reader's ability to read while awake, so we needed a camera with a higher resolution.
+    <a href="https://docs.google.com/presentation/d/16-I5gEO1gVwB2ijLxUpCj21INk5JGG1OYHLhOgb4pQw/edit?usp=sharing">Midterm Presentation</a><br>
+    As discussed in our presentation, there were some <b>limitations</b> to our first prototype. The first was that the camera we used did not operate at a high enough resolution to capture a clear image of our text from more than 5 inches away. Positioning the camera within a couple inches of the text would significantly hinder the reader's ability to read while awake, so <b>we needed a camera with a higher resolution</b>.
     <br><br>
-    Another limitation was that in order for Pytesseract to correctly transform the image to string, the image needed to be as straight as possible. If it was rotated maybe more than 15 degrees, then Pytesseract would have a really hard time and would spit out gibberish text. For the next iteration, we would need to unwarp warped images and correct any rotation in the image before passing it into Pytesseract.
+    Another limitation was that in order for Pytesseract to correctly transform the image to string, the image needed to be as straight as possible. If it was rotated maybe more than 15 degrees, then Pytesseract would have a really hard time and would spit out gibberish text. For the next iteration, <b>we would need to unwarp warped images and correct any rotation</b> in the image before passing it into Pytesseract.
     <br><br>
-    Our main milestones for our next prototype included:<br><br>
+    Our <b>main milestones</b> for our next prototype included:<br><br>
     1. Improving calibration of BPM data<br>
     2. Setting up the Raspberry Pi and necessary modules (camera and speaker)<br>
     3. Sending data wirelessly<br>
@@ -138,10 +161,16 @@
     5. Improving speech system<br>
     6. Designing a form factor for the entire setup<br>
   </p>
-  <h3>Week #9: Nov. 13 - 19</h3>
+
+  <h3>Week 9: November 13 - 19</h3>
+  <h4>Improving calibration before processing BPM data</h4>
   <p>
     From our work earlier on processing BPM data, we learned that before gathering data, we needed to calibrate the sensor. We had already implemented one round of calibration, where we gave the sensor 15 seconds to calibrate itself, eliminating some of the noisier BPM data in the beginning. For our next iteration, we added a round of calibration to determine the user's average awake BPM threshold. Once the system has received 15 BPM data points under 95 BPM, it deems the data stable and starts to calculate the user's average heart rate from the next 15 BPM data points. After the average has been calculated, the system sets the awake/asleep BPM threshold equal to: user's average BPM - 10 BPM.* If the system receives 10 BPM data points under this awake/asleep threshold, then it deems the user asleep and triggers the image processing.
     <br><br>
+    *Research shows that heart rate drops significantly while asleep: <a href="https://www.livestrong.com/article/105256-normal-heart-rate-sleeping/">Normal Heart Rate Sleeping</a>
+  </p>
+  <h4>Camera and speaker modules for the Raspberry Pi</h4>
+  <p>
     Next, we went to Microcenter and got a much higher resolution <a href="http://www.microcenter.com/product/463611/8MP_Raspberry_Pi_Camera_Module">camera module</a> (8 MP!) and a <a href="http://www.microcenter.com/product/486598/Speaker_pHAT">speaker phat</a> to attach to our Raspberry Pi. We setup the two modules using the following guides:
     <br>
     <a href="https://thepihut.com/blogs/raspberry-pi-tutorials/16021420-how-to-install-use-the-raspberry-pi-camera">How to Install/Use the Raspberry Pi Camera</a>
@@ -149,12 +178,12 @@
     <a href="https://learn.pimoroni.com/tutorial/sandyj/assembling-speaker-phat">Assembling Speaker Phat</a>
     <br>
     <a href="https://github.com/pimoroni/speaker-phat">Installing Speaker Phat</a>
-    <br><br>
-    *Research shows that heart rate drops significantly while asleep: <a href="https://www.livestrong.com/article/105256-normal-heart-rate-sleeping/">Normal Heart Rate Sleeping</a>
   </p>
-  <h3>Week #10: Nov. 20 - 26</h3>
+
+  <h3>Week 10: November 20 - 26</h3>
+  <h4>Sending data wirelessly</h4>
   <p>
-    The next thing we needed to do was set up a server on the Raspberry Pi, so that we could send data wirelessly to a webpage accessible to other computers on the same network. This proved to be a major pain point of the project.
+    We needed to set up a server on the Raspberry Pi, so that we could send data wirelessly to a webpage accessible to other computers on the same network. This proved to be a major pain point of the project.
     <br><br>
     We found some guides (<a href="https://www.raspberrypi.org/documentation/remote-access/web-server/apache.md">this</a> and <a href="https://diyhacking.com/raspberry-pi-web-server/">this</a>) on how to setup an Apache server on the Pi and use PHP on the server side. We setup a <a href="https://raspberrypi.stackexchange.com/questions/37920/how-do-i-set-up-networking-wifi-static-ip-address/74428#74428">static IP address</a> on our Pi while connected to the "MIT" wifi network (our Raspberry Pi would not connect to MIT Secure). We used Python for the client side and set up socket connections. However, when we tried connecting as a client, the server never acknowledged a connection. We initially thought we had chosen a bad port, but we tried 4444, 8080, 80, and all sorts of random numbers, and nothing worked.
     <br><br>
@@ -162,7 +191,9 @@
     <br><br>
     We suspect that the MIT networks block a lot of ports, which may have been the root of our failed first attempt.
   </p>
-  <h3>Week #11: Nov. 27 - Dec. 3</h3>
+
+  <h3>Week 11: November 27 - December 3</h3>
+  <h4>Designing a stand and fixture</h4>
   <p>
     After getting most of the software logic working, we then created a permanent fixture to hold the camera and Raspberry Pi.
     At the beginning of the project, we had originally wanted a wearable eye and earpiece for PaperCast. However, we quickly realized
@@ -170,46 +201,62 @@
     there were far too many factors that could prevent us from getting a clear image to convert to text, such as the direction of the head,
     or if hair or a hand got in the way. We also wanted the user to feel more comfortable by having less hardware attached to his/her head.
     <br><br>
-    As a result, we designed a stand to attach the camera, as shown here: [INSERT IMAGE]. <br><br>
-    We made the file for the laser cutting job using Adobe Illustrator, found here. [INSERT URL TO IMAGE]
-    We decided to cut the side stands from wood because it was cheaper, but made the middle part out of clear acrylic
-    so that it would not interfere with the user's peripheral vision. We cut slots in the wooden panels so that the height
-    of the camera could be adjustable.
+    As a result, we designed a stand to attach the camera. We decided to cut the side stands from wood because it was cheaper, but cut the fixture for the Raspberry Pi out of clear acrylic so that it would not interfere with the user's peripheral vision. We created the lasercut files using Adobe Illustrator:<br>
+    <img src="images/lasercut-stand.png" height = "700"><br>
+    <i>Lasercut files for the wood stands</i>
     <br><br>
+    <img src="images/lasercut-pi.png" width = "700"><br>
+    <i>Lasercut file for the acrylic fixture for the Raspberry Pi, with holes for screws</i>
+    <br><br>
+    We cut slots in the wooden panels so that the height
+    of the camera could be adjustable:<br>
+    <img src="images/photo-wood.jpg" width = "700">
+
+  </p>
+  <h4>Enhancing image processing with warping and thresholding</h4>
+  <p>
     After building the form factor, and attaching the Raspberry Pi 2 and Pi Camera with screws, we were able to get consistent images.
     However, these images were still blurry, and we learned that our new camera does not perform auto-focus.
     We had to use needle-nose pliers to <a href= "https://www.jeffgeerling.com/blog/2017/fixing-blurry-focus-on-some-raspberry-pi-camera-v2-models"> manually twist the camera</a> lens until it focused.
 
     From these images, the accuracy rate of the text-to-speech library was around 50%, and took about 3 minutes to process. We used
     <a href= "https://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/"> this guide</a> as a basis to process the image to improve image to text accuracy.
-    The process consists of:
+    The process consists of:<br><br>
 
-      <div> <b>Taking a clear photo of a document where all four edges are visable:</b>
-      <br> <br><img src="images/cleanText.png" width = "300px"></img></div> <br>
+    <i>Taking a clear photo of a document where all four edges are visible:</i>
+    <br><img src="images/cleanText.png" width = "300px"></img><br><br>
 
-      <div> <b>Detecting edges using Canny Edge Detection:</b>
-      <br> <br><img src="images/edged.png" width = "300px"></img></div><br>
+    <i>Detecting edges using Canny Edge Detection:</i>
+    <br><img src="images/edged.png" width = "300px"></img><br><br>
 
-      <div> <b>Finding the largest approximately quadrilateral contour:</b>
-      <br> <br><img src="images/outline.png" width = "300px"></img></div><br>
+    <i>Finding the largest approximately quadrilateral contour:</i>
+    <br><img src="images/outline.png" width = "300px"></img><br><br>
 
-      <div> <b>Applying perspective transform to warp the document into a rectangle and applying
-      adaptive thresholding to make the text more clear.</b>
-      <br> <br><img src="images/warped.png" width = "300px"></img></div><br>
+    <i>Applying perspective transform to warp the document into a rectangle and applying
+    adaptive thresholding to make the text more clear.</i>
+    <br><img src="images/warped.png" width = "300px"></img><br><br>
 
-      From this image, we can easily extract the text from the image using the pytesseract library.
-      We found that the processing time was reduced to about 20 seconds, with a significant improvement in accuracy.
+    From this image, we can easily extract the text from the image using the pytesseract library.
+    We found that the processing time was reduced to about <b>20 seconds</b>, with a significant improvement in accuracy.
 
-      We used Google's Text to Speech API to convert the text to speech in an MP3 file format, and
-      used MPG321 to play the file. We found that this library had the clearest audio.
+    We used Google's Text to Speech API to convert the text to speech in an MP3 file format, and
+    used MPG321 to play the file. We found that this library had the clearest audio.
   </p>
-  <h3>Week #12: Dec. 4 - 10</h3>
+
+  <h3>Week 12: December 4 - 10</h3>
+  <h4>Integrating with the server</h4>
   <p>
     Integrating the data and image processing with the server gave us some unexpected difficulties. Because the server processing needed to run in parallel with the data/image processing, it was easier to split the server code into a separate script, which we called server.py. We then imported process.py into server.py, but because we had not specified in process.py an "if __name__ = '__main__'", all of the code in process.py would run immediately, and we ran into errors with camera setup if we were concurrently using the camera in another test. Thus, we split the data and image processing in process.py into methods and only imported the main() and getVariables() function (which gets the variables that we need to display the relevant data on the webpage). To run the server and main() in parallel, we used a timer to start main() roughly 5 seconds after starting the server.
+    <br><br>
+    After successfully integrating the server and process code, once the server started, we could see on a webpage the user's data. The webpage will not show a BPM reading until the sensor is calibrated.<br>
+    <img src="images/webpage-notcalibrated.png" width = "700"><br>
+    Once the system has calculated the user's average heart rate, it will display that data on the page. If the user's heart rate is consistently 10 bpm below his/her average heart rate, then the system will deem the user asleep and display the text that he/she was reading.
+    <img src="images/webpage-asleep.png" width="700"><br><br>
+    <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
   </p>
-  <a href="https://docs.google.com/presentation/d/1yvJKGXxBtHxZM1e3UcwLFDf2uRHcbEwbAgC5nwGftOA/edit?usp=sharing">Final Presentation</a>
 
-  <h3>Week #13: Dec. 11 - 17</h3>
+  <h3>Week 13: December 11 - 17</h3>
+  <h4>Conclusions and future work</h4>
   <p>
     [what we learned from moving stuff]
     [refining stuff]

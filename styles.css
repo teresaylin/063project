@@ -1,0 +1,18 @@
+p {
+  line-height: 150%;
+  font-family: 'Roboto Slab', serif;
+  color: #a92d2d;
+}
+
+h4 {
+  font-family: 'Roboto Slab', serif;
+  color: #7d7d7d;
+}
+
+h2, h3 {
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+b {
+  color: #f70101;
+}
